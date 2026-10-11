@@ -1,0 +1,168 @@
+/* TIMELINE STYLING */
+
+.timeline-section {
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.timeline-track-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 24px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(120, 234, 242, 0.4) 0%,
+    rgba(245, 158, 11, 0.3) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+}
+
+.timeline-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+}
+
+.timeline-marker-col {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.timeline-node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-fast);
+}
+
+.timeline-row:hover .timeline-node {
+  transform: scale(1.1);
+}
+
+.timeline-node.node-education,
+.timeline-node.node-technical,
+.timeline-node.node-learning {
+  color: var(--accent-cyan);
+  border-color: var(--border-cyan);
+}
+
+.timeline-node.node-sports {
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.4);
+  background: #191610;
+}
+
+.timeline-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-fast);
+}
+
+.timeline-row:hover .timeline-card {
+  border-color: var(--border-cyan);
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-badge-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.timeline-badge-pill.type-education,
+.timeline-badge-pill.type-technical,
+.timeline-badge-pill.type-learning {
+  background: var(--accent-cyan-subtle);
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-cyan);
+}
+
+.timeline-badge-pill.type-sports {
+  background: rgba(245, 158, 11, 0.14);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.timeline-year {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.timeline-item-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-item-org {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.timeline-item-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .timeline-line {
+    left: 18px;
+  }
+
+  .timeline-node {
+    width: 36px;
+    height: 36px;
+  }
+
+  .timeline-row {
+    gap: 14px;
+  }
+
+  .timeline-card {
+    padding: 18px;
+  }
+}
